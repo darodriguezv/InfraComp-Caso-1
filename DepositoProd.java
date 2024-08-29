@@ -35,7 +35,7 @@ public class DepositoProd {
         Producto producto = productos.get(0);
         productos.remove(0);
         this.numDepProd--;
-        notify();
+        notifyAll();
         return producto;
     }
 }

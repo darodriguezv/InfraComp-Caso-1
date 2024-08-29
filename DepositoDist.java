@@ -22,7 +22,7 @@ public class DepositoDist {
     public synchronized void guardar(Producto Nproducto) {
         productos.add(Nproducto);
         this.numDepDist++;
-        notify();
+        notifyAll();
     }
 
     public synchronized Producto distribuir(String tipo) {
