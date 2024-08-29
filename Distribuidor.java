@@ -11,7 +11,7 @@ public class Distribuidor extends Thread {
         this.depositoDist=NdepositoDist;
         this.id=Nid;
         this.terminar=false;
-        System.out.println("Distribuido "+id+" creado, tipo de producto: " + tipoProducto);
+        System.out.println("Distribuidor "+id+" creado, tipo de producto: " + tipoProducto);
     }
 
     public void run() {
