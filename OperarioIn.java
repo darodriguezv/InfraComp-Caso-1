@@ -15,7 +15,7 @@ public class OperarioIn extends Thread {
 
     public void run() {
         System.out.println("OperarioIn inicia");
-        while (contadorFinal < 3) {
+        while (contadorFinal < 4) {
             while (depositoProd.getNumDepProd() == 0) {
                 Thread.yield();
             }
@@ -29,7 +29,7 @@ public class OperarioIn extends Thread {
                 Thread.yield();
             }
             cinta.transportar(producto);
-            System.out.println("        OperarioIn transporta producto: " + producto.getTipo());
+            //System.out.println("        OperarioIn transporta producto: " + producto.getTipo());
         }
         System.out.println("OperarioIn termina");
     }

@@ -25,6 +25,10 @@ public class DepositoDist {
         notify();
     }
 
+    
+
+
+
     public void getProductosAlmacenados() {
         for (Producto producto : productos) {
             System.out.println(producto.getTipo());

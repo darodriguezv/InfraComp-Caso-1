@@ -13,7 +13,7 @@ public class OperarioOut extends Thread {
 
     public void run() {
         System.out.println("OperarioOut inicia");
-        while (contadorFinal < 3) {
+        while (contadorFinal < 4) {
             while (cinta.getNumProd() == 0) {
                 Thread.yield();
             }

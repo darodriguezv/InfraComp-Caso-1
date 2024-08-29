@@ -20,14 +20,12 @@ public class Cinta {
     public synchronized void transportar(Producto Nproducto) {
         productos.add(Nproducto);
         this.numProd++;
-        notify();
     }
 
     public synchronized Producto sacar() {
         Producto producto = productos.get(0);
         productos.remove(0);
         this.numProd--;
-        notify();
         return producto;
     }
 

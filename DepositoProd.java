@@ -20,9 +20,15 @@ public class DepositoProd {
     }
 
     public synchronized void producir(Producto Nproducto) {
+        while (capDepProd == numDepProd) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                //e.printStackTrace();
+            }
+        }
         productos.add(Nproducto);
         this.numDepProd++;
-        notify();
     }
 
     public synchronized Producto sacar() {

@@ -36,8 +36,6 @@ public class Main {
         // System.out.println(depositoProd.numDepProd);
         // depositoProd.getProductosAlmacenados();
 
-
-
         // System.out.println(cinta.getNumProd());
         // cinta.getProductosAlmacenados();
         

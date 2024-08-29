@@ -17,30 +17,14 @@ public class Productor extends Thread {
     public void run() {
         System.out.println("Productor " + id + " inicia");
         while (numProducido < numProductos) {
-            while (depositoProd.getCapDepProd() == depositoProd.getNumDepProd()) {
-                try {
-                    //System.out.println("        Productor " + id + " espera");
-                    wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
             Producto producto = new Producto(tipoProducto);
             depositoProd.producir(producto);
             numProducido++;
             //System.out.println("        Productor " + id + " produce producto: " + producto.getTipo());
         }
 
-        while (depositoProd.getCapDepProd() == depositoProd.getNumDepProd()) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
         Producto producto = new Producto("FIN_" + tipoProducto);
         depositoProd.producir(producto);
-        System.out.println("        Productor " + id + " produce producto: " + producto.getTipo());
         System.out.println("Productor " + id + " termina");
     }
 }
