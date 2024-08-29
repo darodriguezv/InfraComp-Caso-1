@@ -38,10 +38,4 @@ public class DepositoProd {
         notify();
         return producto;
     }
-
-    public void getProductosAlmacenados() {
-        for (Producto producto : productos) {
-            System.out.println(producto.getTipo());
-        }
-    }
 }

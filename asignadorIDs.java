@@ -1,7 +1,7 @@
-public class DistribuidorIDs {
+public class asignadorIDs {
     private int id;
 
-    public DistribuidorIDs() {
+    public asignadorIDs() {
         id = 0;
     }
 

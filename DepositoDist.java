@@ -25,13 +25,31 @@ public class DepositoDist {
         notify();
     }
 
-    
+    public synchronized Producto distribuir(String tipo) {
+        while (numDepDist == 0) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                //e.printStackTrace();
+            }
+        }
+        boolean hay = false;
+        int index = -1;
 
-
-
-    public void getProductosAlmacenados() {
         for (Producto producto : productos) {
-            System.out.println(producto.getTipo());
+            if (producto.getTipo().equals(tipo) || producto.getTipo().equals("FIN_" + tipo)) {
+                hay = true;
+                index = productos.indexOf(producto);
+                break;
+            }
+        }
+        if (hay) {
+            Producto producto = productos.get(index);
+            productos.remove(index);
+            this.numDepDist--;
+            return producto;
+        } else {
+            return null;
         }
     }
 }

@@ -28,10 +28,4 @@ public class Cinta {
         this.numProd--;
         return producto;
     }
-
-    public void getProductosAlmacenados() {
-        for (Producto producto : productos) {
-            System.out.println(producto.getTipo());
-        }
-    }
 }
