@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-
 public class Cinta {
     private static Integer capCinta = 1;
     private Integer numProd;
-    private ArrayList<Producto> productos = new ArrayList<Producto>();
+    private Producto[] productoEnCinta = new Producto[1];
 
     public Cinta() {
         this.numProd = 0;
@@ -18,13 +16,13 @@ public class Cinta {
     }
 
     public synchronized void transportar(Producto Nproducto) {
-        productos.add(Nproducto);
+        productoEnCinta[0] = Nproducto;
         this.numProd++;
     }
 
     public synchronized Producto sacar() {
-        Producto producto = productos.get(0);
-        productos.remove(0);
+        Producto producto = productoEnCinta[0];
+        productoEnCinta[0] = null;
         this.numProd--;
         return producto;
     }
